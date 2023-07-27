@@ -1,0 +1,355 @@
+<html>
+  <head>
+    <title>My first page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="">Resources</a>
+        <a href="">Articles</a>
+        <a href="">For Employers</a>
+      </nav>
+      <input type="search"aria-label="search" class="search_box"></input>
+    </header>
+  <main>
+  <div class="form_container">
+  <h1>Create an Account</h1>
+  <h2>It allows you to share your work with colleagues and employers</h2>
+  <form>
+      <label for="name">Name</label>
+      <input id="name" type="text"></input>
+    <p id="nameValidation" class="validation_message"></p>
+  
+      <label for="email">Email</label>
+      <input id="email" type="email"></input>
+    <p id="emailValidation" class="validation_message"></p>
+
+      <label for="Password">Password</label>
+      <input id="Password" type="Password"></input>
+  <p id="PasswordValidation" class="validation_message"></p>
+
+<label for="profession" >Your profession</label>
+<select id="profession">
+  <option>Designer</option>
+  <option>Front-end Developer</option>
+  <option>Back-end Developer</option>
+   <option>Business Analyst</option>
+  </select>
+  <input type="checkbox" id="Agreement" aria-label="Agreement">I agree with<a href="">Terms and Conditions</a> </input>
+<p id="AgreementValidation" class="validation_message"></p>
+
+</form>
+<div class="button_container">
+<button type="cancel" class="secondary">Cancel</button>
+<button type="submit" class="primary" value="submit" onclick="Validate()">Register</button>
+  </div>
+</div>
+ <div class="img_container">
+<img alt="cat and astronaut in the space" src="http:/ilonasarkisova.ru/img/form_bg.png"></img>
+ </div>
+</main>
+      <footer>
+        <div class="footer_links">
+        <div class="footer_left">
+         <a href="">SimpleShare</a>
+          </div>
+        <div class="footer_right">
+        <a href="">About</a>
+        <a href="">Help</a>
+        <a href="">Legal</a>
+          </div>
+         </div>
+        <small>2023. All rights reserved</small>
+      </footer>
+  </body>
+</html>
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap');
+:root{
+  /* Color styles */
+--black: rgba(0, 0, 0, 1);
+--dark-grey: rgba(0, 0, 0, 0.75);
+--grey: rgba(218, 218, 218, 1);
+--light-grey: rgba(248, 247, 247, 1);
+--white: rgba(255, 255, 255, 1);
+--green: rgba(39, 174, 96, 1);
+--blue: rgba(32, 157, 204, 1);
+--red: rgba(235, 23, 75, 1);
+
+/* Text-size styles */
+/* base size: p (16px) */
+--h1: 2.25rem;
+--h2: 1.12rem;
+--p: 1rem;
+--small: 0.88rem;
+--link: 1.12rem;
+--button: 1rem;
+}
+
+.validation_message{
+  color: var(--red);
+  position: relative;
+  top: -17px;
+}
+
+.border{
+  border: 1px solid var(--red) !important;
+}
+
+html{
+  font-family: 'Open Sans', sans-serif; 
+  font-weight: 400; 
+  font-size: 16px;
+}
+
+button{
+  font-family: 'Open Sans', sans-serif; 
+  font-weight: 700; 
+  font-size: var(--button);
+}
+
+body{
+  margin: 0;
+}
+
+h1{font-family: 'Roboto Condensed', sans-serif; 
+  font-weight:400; 
+  font-size: var(--h1);
+}
+
+h2{
+  font-family: 'Roboto Condensed', sans-serif; 
+  font-weight: 700; 
+  font-size: var(--h2);
+}
+
+nav{
+  font-size: var(--link); 
+  display: flex; 
+  align-items: center; 
+  gap: 61px; 
+}
+
+main{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: calc(74px + 63px);
+  margin-left: 85px;
+  box-sizing: border-box;
+  max-width: 1200px;
+}
+
+nav a, footer a{
+  color: var(--white);
+}
+
+footer{
+  font-size: var(--link); 
+  background-color: var(--dark-grey);
+  margin-top: 63px;
+}
+
+.footer_links{
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 121.5px;
+}
+.footer_right{
+  display: flex;
+  gap: 60px;
+}
+
+small{
+  font-size: var(--smal); 
+  color: var(--white);
+  background-color: var(--black);
+  display: block;
+  text-align: center;
+  padding: 12px 0;
+}
+
+header{
+  background-color: var(--green); 
+  height: 74px; 
+  padding: 19px 82px; 
+  box-sizing: border-box; 
+  position: fixed; 
+  top: 0; 
+  width: 100%; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+
+a{
+  color: var(--blue); 
+  text-decoration: none; 
+}
+a:hover{
+  text-decoration: underline;
+  text-underline-offset: 7px;
+}
+
+.input{
+  border: 1px solid var(--grey); 
+  border-radius: 3px; 
+  height: 44px; 
+  width: 100%; 
+  box-sizing: border-box; 
+  display: block; 
+  padding: 9px 10px; 
+  margin-bottom: 22px;
+}
+
+input[type=text], input[type=email], input[type=Password], input[type=search], select{
+  border: 1px solid var(--grey); 
+  border-radius: 3px; 
+  height: 44px; 
+  width: 440px; 
+  box-sizing: border-box; 
+  display: block; 
+  padding: 9px 10px; 
+  margin-bottom: 22px;
+}
+
+ input[type=search]{
+  padding-left: 33px; background:url("https://ilonasarkisova.ru/fec/search.svg"); 
+  background-color: var(--white); 
+  background-repeat: no-repeat; 
+  background-position: 9px 10px; 
+  margin-bottom: 0;
+   width: 30%;
+}
+
+.search_box{
+  padding-left: 33px; 
+  background: url("https://ilonasarkisova.ru/fec/search.svg"); 
+  background-color: var(--white); 
+  background-repeat: no-repeat; 
+  background-position: 9px 10px; 
+}
+.form_container{
+  width: 36.67%;
+}
+
+.img_container{
+  width: 56.25%;
+}
+
+.img_container img{
+  width: 100%;
+}
+
+label{
+  display: block;
+  margin-bottom: 10px;
+}
+
+.primary{
+  padding: 11px 60px;
+  height: 44px;
+  border-radius: 22px;
+  background: var(--green);
+  border: none;
+  color: var(--white);
+}
+
+.secondary{
+  padding: 11px 60px;
+  height: 44px;
+  border-radius: 22px;
+  color: var(--green);
+  background-color: var(--white);
+  border: 2px solid var(--green);
+}
+
+.primary:disabled{
+  opacity: 0.5;
+}
+
+.primary:hover, .primary:active{
+  background-color: green;
+}
+
+.secondary:hover, .secondary:active{
+  border-color: green;
+}
+
+form{
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+.button_container{
+  display: flex;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 600px) {
+  .form_container{
+  width: 100%;
+}
+.img_container{
+  width: 100%;
+  }
+  main{
+    flex-direction: column-reverse;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 0px;
+    margin-top: auto;
+  }
+  nav{
+    flex-direction: column;
+    gap: 10;
+  }
+  header{
+    height: auto;
+    flex-direction: column-reverse;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+  }
+  input[type=search]{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+function Validate(){
+  var FirstName=document.getElementById("name");
+  var FirstNameValidation=document.getElementById("nameValidation");
+  
+  var Email=document.getElementById("email");
+  var EmailValidation=document.getElementById("emailValidation");
+  
+  var Password=document.getElementById("Password");
+  var PasswordValidation=document.getElementById("PasswordValidation");
+  
+  var Agreement=document.getElementById("Agreement");
+  var AgreementValidation=document.getElementById("AgreementValidation");
+  
+  if (FirstName.value==""){
+    FirstNameValidation.innerHTML="Please fill your name";
+    FirstName.classList.add("border");
+    }
+  
+  if (Email.value==""){
+  EmailValidation.innerHTML="Please fill your email";
+  Email.classList.add("border");
+  }
+  
+    if (Password.value==""){
+  PasswordValidation.innerHTML="Please create a password more than 6 symbols";
+  Password.classList.add("border");
+  } else if
+    (Password.value.length<=6){
+    PasswordValidation.innerHTML="Password should be longer than 6 symbols";  
+    Password.classList.add("border");
+    }
+  
+  if (Agreement.value.checked=="no"){
+  AgreementValidation.innerHTML="To register, agree to the terms, please";
+      }
+}
+
